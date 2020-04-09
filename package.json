@@ -1,5 +1,5 @@
 {
-  "name": "fmw-match-map",
+  "name": "fmw-match-plugin",
   "version": "1.0.0",
   "description": "FaceMaskWarriors Match App",
   "main": "index.js",
@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dtiemann83/fmw-match-map.git"
+    "url": "git@github.com:FaceMaskWarriors/fmw-match-plugin.git"
   },
   "author": "Dana Tiemann",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dtiemann83/fmw-match-map/issues"
+    "url": "https://github.com/FaceMaskWarriors/fmw-match-plugin/issues"
   },
-  "homepage": "https://github.com/dtiemann83/fmw-match-map#readme"
+  "homepage": "https://github.com/FaceMaskWarriors/fmw-match-plugin#readme"
 }
