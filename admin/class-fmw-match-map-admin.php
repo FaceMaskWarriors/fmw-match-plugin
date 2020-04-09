@@ -100,4 +100,12 @@ class Fmw_Match_Map_Admin {
 
 	}
 
+	public function register_options_page(){
+		add_options_page('FMW Match Map Settings', 'FMW Map', 'manage_options', 'fmw-match-map-opts', array($this, 'adminPage'));
+	}
+
+	public function adminPage(){
+		require('adminPage.php');
+	}
+
 }

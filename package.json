@@ -1,0 +1,26 @@
+{
+  "name": "fmw-match-map",
+  "version": "1.0.0",
+  "description": "FaceMaskWarriors Match App",
+  "main": "index.js",
+  "dependencies": {
+    "webpack": "^4.42.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.11"
+  },
+  "scripts": {
+    "build": "webpack",
+    "build:watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dtiemann83/fmw-match-map.git"
+  },
+  "author": "Dana Tiemann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dtiemann83/fmw-match-map/issues"
+  },
+  "homepage": "https://github.com/dtiemann83/fmw-match-map#readme"
+}

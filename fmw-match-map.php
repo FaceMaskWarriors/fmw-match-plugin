@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       FMWMatchMap
  * Plugin URI:        https://github.com/dtiemann83/fmw-match-map.git
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       Map for facemask warriors, to match donation centers and supplies
  * Version:           1.0.0
  * Author:            Dana Tiemann
  * Author URI:        https://github.com/dtiemann83
