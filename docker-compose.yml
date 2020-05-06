@@ -20,7 +20,7 @@ services:
        - "8000:80"
      restart: always
      volumes:
-       - /Users/dana/Desktop/Projects/fmw-match-map:/var/www/html/wp-content/plugins/fmw-match-map
+       - /Users/hifilorau/code/ctd/fmw-match-plugin:/var/www/html/wp-content/plugins/fmw-match-map”
      environment:
        WORDPRESS_DB_HOST: db:3306
        WORDPRESS_DB_USER: wordpress
