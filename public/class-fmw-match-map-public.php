@@ -20,7 +20,8 @@
  * @subpackage Fmw_Match_Map/public
  * @author     Dana Tiemann <dana@netpostech.com>
  */
-class Fmw_Match_Map_Public {
+class Fmw_Match_Map_Public
+{
 
 	/**
 	 * The ID of this plugin.
@@ -47,11 +48,11 @@ class Fmw_Match_Map_Public {
 	 * @param      string    $plugin_name       The name of the plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
-	public function __construct( $plugin_name, $version ) {
+	public function __construct($plugin_name, $version)
+	{
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
-
 	}
 
 	/**
@@ -59,7 +60,8 @@ class Fmw_Match_Map_Public {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_styles() {
+	public function enqueue_styles()
+	{
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -73,8 +75,7 @@ class Fmw_Match_Map_Public {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/fmw-match-map-public.css', array(), $this->version, 'all' );
-
+		wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/fmw-match-map-public.css', array(), $this->version, 'all');
 	}
 
 	/**
@@ -82,7 +83,8 @@ class Fmw_Match_Map_Public {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_scripts() {
+	public function enqueue_scripts()
+	{
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -96,18 +98,26 @@ class Fmw_Match_Map_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/fmw-match-map-public.js', array( 'jquery' ), $this->version, false );
-
+		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/fmw-match-map-public.js', array('jquery'), $this->version, false);
 	}
 
-	public function register_shortcodes(){
-		add_shortcode('fmw-match-map-plugin', array( __CLASS__, 'render_shortcode' ) );
+	public function register_shortcodes()
+	{
+		add_shortcode('fmw-match-map-plugin', array(__CLASS__, 'render_shortcode'));
+		add_shortcode('fmw-match-form', array(__CLASS__, 'render_form_shortcode'));
 	}
 
-	static function render_shortcode($params){
+	static function render_shortcode($params)
+	{
 		ob_start();
-		include( plugin_dir_path( __FILE__ ) .'partials/fmw-match-map-public-display.php');
+		include(plugin_dir_path(__FILE__) . 'partials/fmw-match-map-public-display.php');
 		return ob_get_clean();
 	}
 
+	static function render_form_shortcode($params)
+	{
+		ob_start();
+		include(plugin_dir_path(__FILE__) . 'partials/fmw-match-form.php');
+		return ob_get_clean();
+	}
 }
