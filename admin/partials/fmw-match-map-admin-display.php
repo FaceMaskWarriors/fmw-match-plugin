@@ -13,4 +13,8 @@
  */
 ?>
 
+<div id="admin-app"></div>
+
+<script type="text/javascript" src="<?php echo plugin_dir_url(__FILE__) . "../js/fmw-match-map-admin.js" ?>"></script>
+
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
