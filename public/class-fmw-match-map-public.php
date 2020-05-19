@@ -100,4 +100,14 @@ class Fmw_Match_Map_Public {
 
 	}
 
+	public function register_shortcodes(){
+		add_shortcode('fmw-match-map-plugin', array( __CLASS__, 'render_shortcode' ) );
+	}
+
+	static function render_shortcode($params){
+		ob_start();
+		include( plugin_dir_path( __FILE__ ) .'partials/fmw-match-map-public-display.php');
+		return ob_get_clean();
+	}
+
 }
