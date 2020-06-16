@@ -1,6 +1,7 @@
 <?php
 require_once "include/rb-mysql.php";
 // require_once "include/WPBeanFormatter.php";
+define('FMW_DB_PREFIX', 'fmw_');
 
 // General singleton class.
 class FmwDb {
@@ -12,7 +13,12 @@ class FmwDb {
 	private function __construct()
 	{
 	  // The expensive process (e.g.,db connection) goes here.
-	  R::setup("mysql:host=".DB_HOST.";dbname=".DB_NAME, DB_USER, DB_PASSWORD);
+	  R::setup("mysql:host=db;port=3306;dbname=".DB_NAME, DB_USER, DB_PASSWORD);
+	  R::useFeatureSet('novice/latest');
+	  R::ext('xdispense', function( $type ){
+        return R::getRedBean()->dispense( $type );
+      });
+
 	}
 
 	// The object is created from within the class itself
@@ -21,7 +27,7 @@ class FmwDb {
 	{
 	  if (self::$instance == null)
 	  {
-		self::$instance = new Singleton();
+		self::$instance = new FmwDb();
 	  }
 
 	  return self::$instance;
