@@ -13,9 +13,6 @@
  */
 ?>
 
-<h2>FMW Map Shortcode!</h2>
-
-<div id="front-app"></div>
-
-<script type="text/javascript" src="<?php echo plugin_dir_url(__FILE__) . "../js/fmw-match-map-public.js" ?>"></script>
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
+<div id="front-app"></div>
+<script type="text/javascript" src="<?php echo plugin_dir_url(__FILE__) . "../js/fmw-match-map-public.js" ?>"></script>
