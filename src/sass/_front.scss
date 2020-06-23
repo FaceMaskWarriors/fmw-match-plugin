@@ -1,30 +1,39 @@
 * {
   box-sizing: border-box;
-  content: width=device-width, initial-scale=1; }
+  content: width= device-width, initial-scale=1;
+}
 
 .wrapper {
-  display: grid; }
+  display: grid;
+}
 
 .heading {
-  text-align: center; }
+  text-align: center;
+}
 
 .button-material-type {
-  margin: 0.2em 0.2em; }
+  margin: 0.2em 0.2em;
+}
 
 .reset-button {
   opacity: initial;
   border: hidden;
-  margin: 0.2em 0.2em; }
+  margin: 0.2em 0.2em;
+}
 
 .buttonstyle {
-  margin: 0 0.4em; }
+  margin: 0 0.4em;
+}
 
+// map view
 .mapbox {
-  padding: 10px 0; }
+  padding: 10px 0;
+}
 
 .popover__wrapper {
   position: relative;
-  display: inline-block; }
+  display: inline-block;
+}
 
 .popover__content {
   position: absolute;
@@ -32,8 +41,10 @@
   transform: translate(0, 10px);
   background-color: ghostwhite;
   padding: 1.2rem;
+  // box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   height: 15em;
-  overflow-y: auto; }
+  overflow-y: auto;
+}
 
 .popover__content:before {
   position: absolute;
@@ -45,16 +56,19 @@
   border-width: 0 10px 10px 10px;
   border-color: transparent transparent whitesmoke transparent;
   transition-duration: 0.3s;
-  transition-property: transform; }
+  transition-property: transform;
+}
 
 .popover__wrapper .popover__content {
   z-index: 10;
   opacity: 1;
   visibility: visible;
-  transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97); }
+  transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+}
 
 .popover__message {
-  text-align: center; }
+  text-align: center;
+}
 
 .cancel-button {
   cursor: pointer;
@@ -62,49 +76,59 @@
   width: 22px;
   height: 22px;
   font-weight: bold;
-  color: black; }
+  color: black;
+}
 
 .popover__subtitle {
   font-weight: bold;
   font-size: 1.2em;
-  margin-right: 2px; }
+  margin-right: 2px;
+}
 
+// search box
 .sb-box-1 .search {
   width: 100%;
   position: relative;
   display: flex;
-  margin: 1em 0; }
+  margin: 1em 0;
+}
 
 .sb-box-1 .searchTerm {
   width: 15em;
   border-right: none;
   padding: 0.5em;
   border-radius: 5px 0 0 5px;
-  outline: none; }
+  outline: none;
+}
 
 .sb-box-1 .searchButton {
   text-align: center;
   border-radius: 0 5px 5px 0;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
+// list view
 .list-view-column {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 0.1em;
-  padding: 10px 10px; }
+  padding: 10px 10px;
+}
 
 .grid {
   display: grid;
   grid-auto-rows: auto;
+  // grid-gap: 1px;
   height: 22em;
-  overflow-y: auto; }
+  overflow-y: auto;
+}
 
 .grid_rows {
   color: black;
   display: grid;
   grid-auto-rows: auto;
-  grid-row-gap: 1em; }
-
+  grid-row-gap: 1em;
+}
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -112,5 +136,5 @@
   border: 0.1em solid black;
   padding: 10px;
   height: auto;
-  overflow-y: auto; }
-
+  overflow-y: auto;
+}
