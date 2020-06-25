@@ -2,9 +2,10 @@
 
 require_once 'FmwDb.php';
 
-class FMWDonation {
+class FMWDonation
+{
 
-	static $table = FMW_DB_PREFIX.'donation';
+	static $table = FMW_DB_PREFIX . 'donation';
 
 	const fields = [
 		'name',
@@ -12,6 +13,7 @@ class FMWDonation {
 		'description',
 		'quantity',
 		'category',
+		'category_description',
 		'location_name',
 		'location_lat',
 		'location_lng',
@@ -20,31 +22,36 @@ class FMWDonation {
 		'active'
 	];
 
-	public function __construct($id=null){
+	public function __construct($id = null)
+	{
 		$this->db = FmwDb::getInstance();
-		if($id){
+		if ($id) {
 			$this->id = $id;
 			$this->findById($id);
 		}
-		R::fancyDebug( TRUE );
+		// R::fancyDebug( TRUE );
 	}
 
-	public function new(){
-		$this->data =  R::xdispense(self::$table );
+	public function new()
+	{
+		$this->data =  R::xdispense(self::$table);
 	}
 
-	public function setValue($field, $val){
-		if(in_array($field, self::fields))
+	public function setValue($field, $val)
+	{
+		if (in_array($field, self::fields))
 			$this->data->{$field} = $val;
 		else
 			throw new Error("Invalid field! '$field'");
 	}
 
-	public function findById($id){
-		$this->data = R::load( self::$table , $id );
+	public function findById($id)
+	{
+		$this->data = R::load(self::$table, $id);
 	}
 
-	public function findByLatLng($lat, $lng, $radius, $start=0, $limit=20){
+	public function findByLatLng($lat, $lng, $radius, $start = 0, $limit = 20)
+	{
 		$query = "SELECT *, (
     			3959 * acos (
       			cos ( radians( %2\$s ) )
@@ -58,25 +65,31 @@ class FMWDonation {
 			HAVING distance < %6\$s
 			ORDER BY distance
 			LIMIT %4\$s , %5\$s ";
-		$nquery = sprintf($query,
+		$nquery = sprintf(
+			$query,
 			self::$table,
-			$lat, $lng, $start, $limit , $radius
+			$lat,
+			$lng,
+			$start,
+			$limit,
+			$radius
 		);
 		return R::getAll(
 			$nquery
-	 	);
+		);
 	}
 
-	private function backFill(){
-		foreach(self::fields as $field){
-			if(!isset($this->data->{$field}))
+	private function backFill()
+	{
+		foreach (self::fields as $field) {
+			if (!isset($this->data->{$field}))
 				$this->data->{$field} = null;
 		}
 	}
 
-	public function save(){
+	public function save()
+	{
 		$this->backFill();
-		$this->id = R::store( $this->data );
+		$this->id = R::store($this->data);
 	}
-
 }
